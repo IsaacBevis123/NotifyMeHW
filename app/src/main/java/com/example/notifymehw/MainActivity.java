@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                         .addLine("Line 1")
                         .addLine("This is the second line")
                         .addLine("Yay this is the last line")
-                        .setSummaryText("+3 more"))
+                        .setSummaryText("+1 more"))
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setDefaults(NotificationCompat.DEFAULT_ALL);
 
@@ -112,6 +112,12 @@ public class MainActivity extends AppCompatActivity {
         NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
 
         notifyBuilder.setLargeIcon(androidImage);
+        notifyBuilder.setStyle(new NotificationCompat.InboxStyle()
+                .addLine("Line 1")
+                .addLine("This is the second line")
+                .addLine("Yay this is the last line")
+                .addLine("Yay updated this notification")
+                .setSummaryText("+0 more"));
         mNotifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
 
         setNotificationButtonState(false, false, true);
